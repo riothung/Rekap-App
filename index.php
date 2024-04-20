@@ -570,6 +570,10 @@ use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 $spreadsheet = \PhpOffice\PhpSpreadsheet\IOFactory::load('./alat_kerja.xlsx');
 $sheet1 = $spreadsheet->setActiveSheetIndex(0);
 $sheet1->getCell('C7')->setValue($user['name']);
+$sheet1->getCell('C8')->setValue($user['jabatan']);
+$sheet1->getCell('C9')->setValue($user['no_hp']);
+$sheet1->getCell('C10')->setValue($user['kota']);
+$sheet1->getCell('C11')->setValue($user['provinsi']);
 
 $i = 15;
   $no = 1;
@@ -1183,13 +1187,17 @@ $writer->save('./rekapan.xlsx');
                           <td><?=$row['tpsPindahNo'] != '' ? "{$row['tpsPindahNo']}, {$row['tpsPindahKelurahan']}, {$row['kecamatanPindah']}" : '-' ?></td>
                           <td><?=$row['alasan'] == '' ? '-' : $row['alasan']?></td>
                           <td class="d-flex gap-2">
-                            <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editPemilih<?=$key?>">
+
+                          <?php if($user['administrator'] > 0){
+                            echo ' <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editPemilih<?=$key?>">
                               <i class="bi bi-pencil-square"></i>
                             </button>
                             <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#hapusPemilih<?=$key?>">
                               <i class="bi bi-trash"></i>
-                            </button>  
-  
+                            </button> ';
+                          }else{
+                            echo "";
+                          }?>
                             <div class="modal fade" id="editPemilih<?=$key?>" tabindex="-1" aria-labelledby="editPemilihLabel" aria-hidden="true">
                               <div class="modal-dialog">
                                 <div class="modal-content">

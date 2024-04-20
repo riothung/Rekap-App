@@ -11,6 +11,20 @@
         </ol>
       </nav>
     </div><!-- End Page Title -->
+    <?php if(isset($_SESSION['success-alert'])):?>
+          <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <i class="bi bi-check-circle me-1"></i>
+            <?= $_SESSION['success-alert']; unset($_SESSION['success-alert'])?>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+          <?php endif;?>
+          <?php if(isset($_SESSION['failed-alert'])):?>
+          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <i class="bi bi-exclamation-octagon me-1"></i>
+            <?= $_SESSION['failed-alert']; unset($_SESSION['failed-alert'])?>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+          <?php endif;?>
 
     <section class="section profile">
       <div class="row">
@@ -66,7 +80,7 @@
 
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label">Company</div>
-                    <div class="col-lg-9 col-md-8">Banwaslu Kabupaten Kupang</div>
+                    <div class="col-lg-9 col-md-8">Bawaslu Kabupaten Kupang</div>
                   </div>
 
                   <div class="row">
@@ -79,12 +93,12 @@
                 <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
 
                   <!-- Profile Edit Form -->
-                  <form>
+                  <form action="./controllers/userController.php?action=edit-profile&id=<?=$id?>" method="POST">
 
                     <div class="row mb-3">
                       <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Full Name</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="fullName" type="text" class="form-control" id="fullName" value="Kevin Anderson">
+                        <input name="name" type="text" class="form-control" id="fullName" value="<?php echo $user['name']; ?>">
                       </div>
                     </div>
 
@@ -93,12 +107,19 @@
                     <div class="row mb-3">
                       <label for="Email" class="col-md-4 col-lg-3 col-form-label">Email</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="email" type="email" class="form-control" id="Email" value="k.anderson@example.com">
+                        <input name="email" type="email" class="form-control" id="Email" value="<?php echo $user['email']; ?>">
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="Email" class="col-md-4 col-lg-3 col-form-label">No Handphone</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="no_hp" type="text" class="form-control" id="no_hp" value="<?php echo $user['no_hp']; ?>">
                       </div>
                     </div>
 
                     <div class="text-center">
-                      <button type="submit" class="btn btn-primary">Save Changes</button>
+                      <button type="submit" class="btn btn-primary" name="submit">Save Changes</button>
                     </div>
                   </form><!-- End Profile Edit Form -->
 
@@ -107,7 +128,7 @@
 
                 <div class="tab-pane fade pt-3" id="profile-change-password">
                   <!-- Change Password Form -->
-                  <form>
+                  <form action="./controllers/userController.php?action=edit-password&id=<?=$id?>" method="POST">
 
                     <div class="row mb-3">
                       <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Current Password</label>

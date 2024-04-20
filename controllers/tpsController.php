@@ -45,7 +45,7 @@ switch ($action) {
           $provinsi = filter_var($_POST['provinsi'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
       
       
-        $sql = "UPDATE tps SET no_tps='$no_tps', kelurahan='$kelurahan', kecamatan='$kecamatan', kota='$kota', provinsi='$provinsi' WHERE id='$id' ";
+        $sql = "UPDATE tps SET no_tps='$no_tps', kelurahan='$kelurahan', kecamatan='$kecamatan', kota='$kota', provinsi='$provinsi' WHERE id='$id'";
       
         // Move the uploaded image to a permanent location on the server
         try{

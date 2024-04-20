@@ -16,7 +16,7 @@ while ($row = $result->fetch_assoc()) {
     $dataTPS[] = $row; // append each row to the data array
 }
 $conn->close();
-echo json_encode($data);
+// echo json_encode($data);
 
 ?>
   <main id="main" class="main">

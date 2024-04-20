@@ -50,8 +50,8 @@
 
               <div class="d-flex justify-content-center py-4">
                 <a href="index.php" class="logo d-flex align-items-center w-auto">
-                  <img src="assets/img/logo.png" alt="">
-                  <span class="d-none d-lg-block">NiceAdmin</span>
+                  <img src="assets/img/logo-bawaslu.png" alt="">
+                  <span class="d-none d-lg-block">BAWASLU KAB. KUPANG</span>
                 </a>
               </div><!-- End Logo -->
 
@@ -68,13 +68,13 @@
                     <div class="col-12">
                       <label for="yourName" class="form-label">Your Name</label>
                       <input type="text" name="name" class="form-control" id="yourName" required>
-                      <div class="invalid-feedback">Please, enter your name!</div>
+                      <div class="invalid-feedback">Silahkan Masukan Nama Anda!</div>
                     </div>
 
                     <div class="col-12">
                       <label for="yourEmail" class="form-label">Your Email</label>
                       <input type="email" name="email" class="form-control" id="yourEmail" required>
-                      <div class="invalid-feedback">Please enter a valid Email adddress!</div>
+                      <div class="invalid-feedback">Silahkan Masukan Email Anda!</div>
                     </div>
 
                     <div class="col-12">
@@ -82,15 +82,42 @@
                       <div class="input-group has-validation">
                         <span class="input-group-text" id="inputGroupPrepend">@</span>
                         <input type="text" name="username" class="form-control" id="yourUsername" required>
-                        <div class="invalid-feedback">Please choose a username.</div>
+                        <div class="invalid-feedback">Silahkan Masukan Username Anda!</div>
                       </div>
                     </div>
 
                     <div class="col-12">
                       <label for="yourPassword" class="form-label">Password</label>
                       <input type="password" name="password" class="form-control" id="yourPassword" required>
-                      <div class="invalid-feedback">Please enter your password!</div>
+                      <div class="invalid-feedback">Silahkan Masukan Password Anda!</div>
                     </div>
+
+                     <div class="col-12">
+                      <label for="yourJabatan" class="form-label">Jabatan</label>
+                      <input type="text" name="jabatan" class="form-control" id="yourJabatan" required>
+                      <div class="invalid-feedback">Silahkan Masukan Jabatan Anda!</div>
+                    </div>
+
+                     <!-- <div class="col-12">
+                      <label for="yourName" class="form-label">Administrator</label>
+                      <input type="text" name="" class="form-control" id="yourAdministrator" required>
+                      <div class="invalid-feedback">Silahkan Mengisi Administrator!</div>
+                    </div> -->
+
+                     <div class="col-12">
+                      <label for="yourNoHp" class="form-label">Nomor HP</label>
+                      <input type="number" name="no_hp" class="form-control" id="yourNoHp" required>
+                      <div class="invalid-feedback">Silahkan Masukan Nomor Handphone Anda!</div>
+                    </div>
+
+                     <!-- <div class="col-12">
+                      <label for="yourKota" class="form-label">Kab/Kota</label>
+                      <select  id="KotaKab">
+                        <option value="kota" class="form-control" id="yourKota" required>Kupang</option>
+                            <div class="invalid-feedback">Pilih Kota/Kab</div>
+                          </select> -->
+                    </div>
+                    
 
                     <!-- <div class="col-12">
                       <div class="form-check">
