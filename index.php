@@ -1196,7 +1196,7 @@ $writer->save('./rekapan.xlsx');
                               <i class="bi bi-trash"></i>
                             </button> ';
                           }else{
-                            echo "";
+                            echo "User Cannot Edit Data";
                           }?>
                             <div class="modal fade" id="editPemilih<?=$key?>" tabindex="-1" aria-labelledby="editPemilihLabel" aria-hidden="true">
                               <div class="modal-dialog">
