@@ -1188,16 +1188,9 @@ $writer->save('./rekapan.xlsx');
                           <td><?=$row['alasan'] == '' ? '-' : $row['alasan']?></td>
                           <td class="d-flex gap-2">
 
-                          <?php if($user['administrator'] > 0){
-                            echo ' <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editPemilih<?=$key?>">
-                              <i class="bi bi-pencil-square"></i>
-                            </button>
-                            <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#hapusPemilih<?=$key?>">
-                              <i class="bi bi-trash"></i>
-                            </button> ';
-                          }else{
-                            echo "User Cannot Edit Data";
-                          }?>
+                          <?php if($user['administrator'] < 1):
+                              echo "";
+                          endif;?>
                             <div class="modal fade" id="editPemilih<?=$key?>" tabindex="-1" aria-labelledby="editPemilihLabel" aria-hidden="true">
                               <div class="modal-dialog">
                                 <div class="modal-content">
